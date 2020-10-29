@@ -2,7 +2,14 @@ import React from 'react';
 import './style.css';
 import {MdDelete} from 'react-icons/md';
 
+import {useSelector} from 'react-redux';
+
 export default function Reservas() {
+
+  const reserves = useSelector(state => state.reserve);
+
+  console.log('MINHA RESERVA: ', reserves);
+
  return (
    <div>
     <h1>Voce solicitou 1 reservas</h1>
