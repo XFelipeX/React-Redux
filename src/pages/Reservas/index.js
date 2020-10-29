@@ -8,23 +8,26 @@ export default function Reservas() {
 
   const reserves = useSelector(state => state.reserve);
 
-  console.log('MINHA RESERVA: ', reserves);
 
  return (
    <div>
-    <h1>Voce solicitou 1 reservas</h1>
+    <h1>Voce solicitou {reserves.length} reservas</h1>
+    
+    {reserves.map(reserve =>(
+      <div className="reservas" key={reserve.id}>
+      <img src={reserve.image} alt={reserve.title}/>
 
-    <div className="reservas">
-      <img src="https://sujeitoprogramador.com/wp-content/uploads/2019/12/maceio.jpg" alt="Maceió"/>
-
-      <strong>Viagem Maceio 7 dias</strong>
-      <span>Quantidade: 2</span>
+      <strong>{reserve.title}</strong>
+      <span>Quantidade: {reserve.amount}</span>
 
       <button type="button" onClick={() => {}}>
         
         <MdDelete size={20} color="#fff" />
       </button>
     </div>
+    ))};
+
+    
 
     <footer>
 
