@@ -3,6 +3,8 @@ import api from '../../services/api';
 import {MdFlightTakeoff} from 'react-icons/md'; // react-icons
 import './style.css';
 
+import {addReserve} from '../../store/modules/reserves/actions'
+
 import {useDispatch} from 'react-redux';
 
 
@@ -28,10 +30,7 @@ export default function Home() {
 
   //acao disparada do botao adicionar reserva
   function handleAdd(trip){
-    dispatch({
-      type:'ADD_RESERVE',
-      trip
-    });
+    dispatch(addReserve(trip));
   }
 
  return (
