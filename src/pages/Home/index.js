@@ -8,6 +8,7 @@ import {addReserveRequest} from '../../store/modules/reserves/actions'
 import {useDispatch} from 'react-redux';
 
 
+// export default function Home({history}) {
 export default function Home() {
   //redux
   const dispatch = useDispatch();
@@ -31,6 +32,8 @@ export default function Home() {
   //acao disparada do botao adicionar reserva
   function handleAdd(id){
     dispatch(addReserveRequest(id));
+
+    //history.push('/reservas');
   }
 
  return (

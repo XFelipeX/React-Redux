@@ -1,21 +1,22 @@
 import React from 'react';
 
 import Routes from './routes';
-import {BrowserRouter} from 'react-router-dom';
+import {Router} from 'react-router-dom';
 import Header from './Components/Header'
 
 import {Provider } from 'react-redux';
+//history precisa ficar antes da store
+import history from './services/history'
 import store from './store';
-
 
 
 export default function src() {
  return (
    <Provider store={store}>
-   <BrowserRouter>
+   <Router history={history}>
    <Header/>
   <Routes/>
-   </BrowserRouter>
+   </Router>
    </Provider>
  );
 }
